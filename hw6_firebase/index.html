@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Chat Room</title>
+    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+    <script>
+      var config = {
+        apiKey: "AIzaSyC3B0M8Tm-N9RixPqeaHy5byDar-eYSHQQ",
+        authDomain: "yeee-26726.firebaseapp.com",
+        databaseURL: "https://yeee-26726.firebaseio.com",
+        projectId: "yeee-26726",
+        storageBucket: "yeee-26726.appspot.com",
+        messagingSenderId: "970871283337"
+      };
+      firebase.initializeApp(config);
+    </script>
+  </head>
+
+  <body>
+    <layer id="layer_0">
+      <form>
+        <fieldset>
+          <legend>SIGN UP/IN/OUT</legend>
+          <p>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required>
+          </p>
+
+          <p>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required>
+          </p>
+
+          <p>
+            <div class="signs">
+              <button class="signUp" type="button" name="button" onclick="signUp(this.form.email.value,this.form.password.value)">SIGN UP</button>
+              <button class="signIn" type="button" name="button" onclick="signIn(this.form.email.value,this.form.password.value)">SIGN IN</button>
+              <button class="signOut" type="button" name="button" onclick="signOut(this.form.email.value,this.form.password.value)">SIGN OUT</button>
+            </div>
+          </p>
+
+        </fieldset>
+      </form>
+    </layer>
+    <layer id="layer_1">
+      <form>
+        <fieldset>
+          <legend>USER INFO UPDATE</legend>
+          <p>
+            <label for="username">User Name</label>
+            <input type="text" name="username" id="username" ,required>
+          </p>
+
+          <p>
+            <label for="job">Job</label>
+            <input type="text" name="job" id="job" ,required>
+          </p>
+
+          <p>
+            <label for="age">Age</label>
+            <input type="number" name="age" id="age" ,required>
+          </p>
+
+          <p>
+            <label for="photo">Photo</label>
+            <input type="file" name="photo" id="photo" ,required>
+            <input type="url" name="photoUrl" id="photoUrl" readonly/>
+          </p>
+
+          <p>
+            <label for="descriptions">Descriptions</label>
+            <textarea name="text" name="descriptions" id="descriptions" rows="8" cols="80"></textarea>
+          </p>
+
+          <p>
+            <button type="button" onclick="updateInfo(this.form)">SUBMIT</button>
+          </p>
+
+        </fieldset>
+      </form>
+    </layer>
+    <layer id="layer_2">
+      <form>
+        <fieldset>
+          <legend>USER INFO</legend>
+
+          <p>
+            <img src="" id="photo_e" />
+          </p>
+
+          <p>
+            <b>Email:</b>
+            <span id="email_e"></span>
+          </p>
+
+          <p>
+            <b>User Name:</b>
+            <span id="username_e"></span>
+          </p>
+
+          <p>
+            <b>Job:</b>
+            <span id="job_e"></span>
+          </p>
+
+          <p>
+            <b>Age:</b>
+            <span id="age_e"></span>
+          </p>
+
+          <p>
+            <b>Descriptions:</b>
+            <span id="descriptions_e"></span>
+          </p>
+
+        </fieldset>
+      </form>
+    </layer>
+    <layer id="layer_3">
+      <form>
+        <fieldset>
+          <legend>CHAT ROOM</legend>
+          <div id="messagelist"></div>
+          <form onsubmit = "sendMessage(this);return false">
+            <input type="text" name="message">
+            <button type="submit">SEND</button>
+          </form>
+        </fieldset>
+      </form>
+    </layer>
+    <script type="text/javascript" src="yeee.js">
+    </script>
+    <link rel="stylesheet" href="style.css">
+  </body>
+</html>
